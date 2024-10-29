@@ -7,19 +7,19 @@ maria:    .string "Maria"
 markos:   .string "Markos"
 marios:   .string "Marios"
 marianna: .string "Marianna"
-naveen: .string "Naveen"
+
 .align 4  # make sure the string arrays are aligned to words (easier to see in ripes memory view)
 
 # These are string arrays
 # The labels below are replaced by the respective addresses
-arraySorted:    .word maria, marianna, marios, markos, naveen
+arraySorted:    .word maria, marianna, marios, markos
 
-arrayNotSorted: .word marianna, markos, maria, markos
+arrayNotSorted: .word marianna, markos, maria
 
 .text
 
-            la   a0, arraySorted
-            li   a1, 5
+            la   a0, arrayNotSorted
+            li   a1, 4
             jal  recCheck
 
             li   a7, 10
